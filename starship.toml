@@ -3,9 +3,8 @@ add_newline = false
 
 # Replace the "❯" symbol in the prompt with "➜"
 [character]                            # The name of the module we are configuring is "character"
-symbol = "  ➟"
 error_symbol = "[  ✗](bold red)"
-success_symbol = "[  λ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+success_symbol = "[  λ](bold fg:#F74510 bg:#000000)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
 
 # Disable the package module, hiding it from the prompt completely
 [package]
@@ -43,7 +42,7 @@ style = "bold white"
 progress_divider = " of "
 
 [memory_usage]
-format = "$symbol[${ram}( | ${swap})]($style) "
+format = "[${ram}( | ${swap})]($style) "
 show_percentage = true
 show_swap = true
 threshold = 50
@@ -53,7 +52,18 @@ disabled = false
 
 # Clear visibility for exit codes
 [status]
-style = "bg:red"
-symbol = "💣 "
+style = "bg:black"
+symbol = "💥 "
 format = '[\[$symbol$status\]]($style) '
 disabled = false
+
+[php]
+format = "via [🐘 $version](147 bold) "
+
+[docker_context]
+format = "via [🐋 $context](blue bold)"
+
+[dotnet]
+symbol = "🥅 "
+style = "green"
+heuristic = false
