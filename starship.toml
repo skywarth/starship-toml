@@ -1,0 +1,59 @@
+    # Don't print a new line at the start of the prompt
+add_newline = false
+
+# Replace the "❯" symbol in the prompt with "➜"
+[character]                            # The name of the module we are configuring is "character"
+symbol = "  ➟"
+error_symbol = "[  ✗](bold red)"
+success_symbol = "[  λ](bold green)"     # The "success_symbol" segment is being set to "➜" with the color "bold green"
+
+# Disable the package module, hiding it from the prompt completely
+[package]
+disabled = false
+
+
+[cmd_duration]
+min_time = 5000
+show_milliseconds = false
+disabled = false
+format="'$duration sire... (italic #87A752)"
+
+
+[directory]
+truncation_length = 5
+format = "[$path]($style)[$lock_symbol]($lock_style) "
+style = "bold #f57800"
+read_only = "🔒"
+read_only_style= "bold white"
+
+[hostname]
+ssh_only = false
+# suffix = ">>"
+
+trim_at = ".companyname.com"
+disabled = false
+style = "bold italic #87A752"
+
+
+[git_commit]
+commit_hash_length = 8
+style = "bold white"
+
+[git_state]
+progress_divider = " of "
+
+[memory_usage]
+format = "$symbol[${ram}( | ${swap})]($style) "
+show_percentage = true
+show_swap = true
+threshold = 50
+style = "bold dimmed white"
+disabled = false
+
+
+# Clear visibility for exit codes
+[status]
+style = "bg:red"
+symbol = "💣 "
+format = '[\[$symbol$status\]]($style) '
+disabled = false
